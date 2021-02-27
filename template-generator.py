@@ -1,24 +1,33 @@
-def read_file(filename):
-    with open(filename, 'r') as f:
-        text = f.read()
-    return text
-        
-def fill_in_template(filename, filled_items):
-    text = read_file(filename)
-    for item in filled_items:
-        text = text.replace(f"<%%{item}%%>", filled_items[item])
-    return text
-    
-def user_form():
-    items = ["name", "age", "hobby"]
-    filled_items = {}
-    for item in items:
-        filled_items[item] = input(f"What is your {item}? ")
-    return filled_items
-    
+class Template(object):
+    def __init__(self, filename):
+        self.filename = filename
+        self.text, self.items = self.read_file()
+
+    def read_file(self):
+            """ 
+            Read a template from a txt file.
+            The first line of the file must be a list of items intend for emd-users to be filled in
+            The rest of the text is the template.
+            return: text(str), items(list)
+            """
+            
+        with open(self.filename, 'r') as f:
+            items = f.readline().split(",")
+            # get rid of "\n" for the last item
+            items[-1] = items[-1][:-1]
+            text = f.read()
+        return text, items
+            
+    def fill_in_template(self):
+        filled_text = self.text
+        for item in self.items:
+            user_input = input(f"What is your {item}? ")
+            filled_text = filled_text.replace(f"<%%{item}%%>", user_input)
+        return filled_text
+
     
 if __name__ == "__main__":
     filename = "templates/user_form_test.txt"
-    filled_items = user_form()
-    print(fill_in_template(filename, filled_items))
+    self_intro = Template(filename)
+    print(self_intro.fill_in_template())
     
