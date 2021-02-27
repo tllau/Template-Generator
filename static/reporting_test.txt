@@ -1,0 +1,11 @@
+Flight number,Date,Callsign,STD,ATD,booking,crewbooking,Checkin count,Cargo
+UO<%%Flight number%%>/<%%Date%%>/HKGRMQ/<%%Callsign%%>/STD<%%STD%%>LT 
+
+//PUSHBACK <%%ATD%%>// 
+
+BOOKING: <%%booking%%> (Including <%%crewbooking%%> Crew booking) 
+
+CHECKED-IN: <%%Checkin count%%> 
+CARGO : <%%Cargo%%> 
+
+NAT:
