@@ -7,15 +7,13 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/fill_in_template", methods = ["POST", "GET"])
+@app.route("/fill_in_template")
 def fill_in_template():
-    if request.method == "POST":
-        test = Template("static/user_form_test.txt")
-        text = test.get_text()
-        items = test.get_items()
-        return render_template("fill_in_template.html", text=text, items=items)
-    else:    
-        return redirect("/")
+    template_name = request.args.get("template")
+    test = Template(f"static/{template_name}.txt")
+    text = test.get_text()
+    items = test.get_items()
+    return render_template("fill_in_template.html", text=text, items=items)
         
 @app.route("/result", methods = ["POST", "GET"])        
 def result():

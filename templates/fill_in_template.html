@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block main %}
+	{{text}}
 	<form action="/result" method="POST"> 
 	{% for item in items %}
 		{{item}}

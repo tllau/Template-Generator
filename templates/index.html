@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 {% block main %}
-	<form action="/fill_in_template" method="POST">
-		<label for="templates">Please select a template:</label>
-		<select name="templates" id="templates">
-			<option value="test1">test1</option>
-			<option value="test2">test2</option>
+	<form action="/fill_in_template" method="GET">
+		<label for="template">Please select a template:</label>
+		<select name="template" id="template">
+			<option value="fill_test">fill_test</option>
+			<option value="read_test">read_test</option>
+			<option value="user_form_test">user_form_test</option>
 		</select>
 		<button type="submit" class="btn btn-primary">Submit</button>
 {% endblock %}
