@@ -3,10 +3,10 @@ class Template(object):
         self.filename = filename
         self.text, self.items = self.read_file()
     
-    def get_text(self)
+    def get_text(self):
         return self.text
         
-    def get_items(self)
+    def get_items(self):
         return self.items
 
     def read_file(self):

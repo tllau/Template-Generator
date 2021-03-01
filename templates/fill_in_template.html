@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block main %}
+	<form action="/result" method="POST"> 
+	{% for item in items %}
+		{{item}}
+		<input type="text" id="{{item}}" name="{{item}}"><br>
+	{% endfor %}
+	<button type="submit">Submit</button>
+	</form>
+{% endblock %}
