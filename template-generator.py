@@ -2,6 +2,12 @@ class Template(object):
     def __init__(self, filename):
         self.filename = filename
         self.text, self.items = self.read_file()
+    
+    def get_text(self)
+        return self.text
+        
+    def get_items(self)
+        return self.items
 
     def read_file(self):
         """ 
