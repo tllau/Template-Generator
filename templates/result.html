@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
 {% block main %}
-	{{text}}
+	<! pass text as HTML string>
+	{{text|safe}}
 {% endblock %}

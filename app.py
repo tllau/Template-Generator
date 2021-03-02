@@ -25,7 +25,8 @@ def result():
         # replace <%%item_name%%> with user input
         for item in test.get_items():
             filled_text = filled_text.replace(f"<%%{item}%%>", request.form[item])
-        return render_template("result.html", text=filled_text)
+        # convert python text to HTML format
+        return render_template("result.html", text=test.to_HTML(filled_text))
     else:    
         return redirect("/")
 
