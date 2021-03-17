@@ -1,3 +1,0 @@
-name,age,hobby
-I am <%%name%%>. I am <%%age%%>. I love <%%hobby%%>.
-
